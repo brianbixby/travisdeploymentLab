@@ -19,6 +19,13 @@ listRouter.post('/api/list', bearerAuth, jsonParser, function(req, res, next) {
     .catch(next);
 });
 
+listRouter.get('/', function(req, res, next) {
+  debug('GET: /');
+  
+  res.send('Please proceed to /api/signup')
+    .catch(next);
+});
+
 listRouter.get('/api/list/:listId', bearerAuth, function(req, res, next) {
   debug('GET: /api/list/:listId');
 
